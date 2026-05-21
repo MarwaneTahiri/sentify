@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request
+from transformers import pipeline
+
+analyzer = pipeline("sentiment-analysis")
 
 app = Flask(__name__)
 
@@ -9,7 +12,8 @@ def home():
 @app.route('/analyse', methods=["POST"])
 def analyse():
     text = request.form.get('text')
-    return f"you returned {text}"
+    sentiment = analyzer(text)
+    return f"{sentiment}"
         
 
 if __name__ == '__main__':
