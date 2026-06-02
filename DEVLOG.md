@@ -10,3 +10,8 @@
 - Created DEVLOG.md to track development progress
 - Discussed finished product scope and roadmap
 - Decided to keep positive/negative for now and upgrade to emotion detection in Phase 2
+
+## Day 3 - 02/06/26
+- Extracted label and score from HuggingFace model output
+- Created result.html template to display sentiment result
+- Result now shows label and rounded confidence percentage
