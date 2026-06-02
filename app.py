@@ -7,13 +7,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template("index.html" )
 
 @app.route('/analyse', methods=["POST"])
 def analyse():
     text = request.form.get('text')
     sentiment = analyzer(text)
-    return f"{sentiment}"
+    
+    label = sentiment[0]['label']
+    score = sentiment[0]['score']
+    return render_template("result.html", score = round(score * 100, 2), label = label)
+
         
 
 if __name__ == '__main__':
