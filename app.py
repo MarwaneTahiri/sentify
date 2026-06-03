@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from transformers import pipeline
 
 analyzer = pipeline("sentiment-analysis")
@@ -12,10 +12,14 @@ def home():
 @app.route('/analyse', methods=["POST"])
 def analyse():
     text = request.form.get('text')
+    if text.strip() == "":
+        return redirect('/')
+
     sentiment = analyzer(text)
     
     label = sentiment[0]['label']
     score = sentiment[0]['score']
+    
     return render_template("result.html", score = round(score * 100, 2), label = label)
 
         
