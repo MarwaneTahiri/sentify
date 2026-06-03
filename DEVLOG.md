@@ -15,3 +15,8 @@
 - Extracted label and score from HuggingFace model output
 - Created result.html template to display sentiment result
 - Result now shows label and rounded confidence percentage
+
+## Day 4 - [date]
+- Added "Analyse another text" link on result page
+- Added empty text validation — redirects to home if empty or whitespace only
+- Model now only runs on valid input
