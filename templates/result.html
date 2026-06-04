@@ -2,11 +2,16 @@
 <html>
 <head>
     <title>Sentify Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h3>{{label}} - {{score}}% </h3>
+<div class="container">
 
-<a href="/">Analyse another text</a>
+<h1>Here is what Sentify thinks...</h1>
+<h2>{{label}} - {{score}}% </h2>
 
+<a href="/" class="resultbutton">Analyse another text</a>
+
+</div>
 </body>
 </html>

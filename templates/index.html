@@ -2,14 +2,23 @@
 <html>
 <head>
     <title>Sentify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<form action="/analyse" method="POST">
+
+<div class="container">
+
+<h1>Sentify</h1>
+<p>Paste in a sentence, paragraph, or article and Sentify will tell you whether it's positive, negative, or neutral — with a confidence score</p>
+
+<form class="userform" action="/analyse" method="POST">
   <p><label for="text">Enter text</label></p>
-  <textarea id="text" name="text" rows="4" cols="50" placeholder="Enter your text, and Sentify will analyse it"></textarea>
+  <textarea class="textarea" id="text" name="text" rows="4" cols="50" placeholder="Enter your text, and Sentify will analyse it"></textarea>
   <br>
-  <input type="submit" value="Submit" >
+  <input class="button" type="submit" value="Submit" >
+
 </form>
+</div>
 
 </body>
 </html>
