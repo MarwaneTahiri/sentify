@@ -16,7 +16,12 @@
 - Created result.html template to display sentiment result
 - Result now shows label and rounded confidence percentage
 
-## Day 4 - [date]
+## Day 4 - 04/06/26
 - Added "Analyse another text" link on result page
 - Added empty text validation — redirects to home if empty or whitespace only
 - Model now only runs on valid input
+
+## Day 5 - 05/06/26
+- Added CSS styling to both pages
+- Centred layout, accent button colour, clean typography
+- Result page styled to match home page
