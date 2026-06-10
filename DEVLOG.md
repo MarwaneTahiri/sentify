@@ -25,3 +25,6 @@
 - Added CSS styling to both pages
 - Centred layout, accent button colour, clean typography
 - Result page styled to match home page
+
+## Day 6 - 10/06/26
+- Added original text display on result page
