@@ -20,7 +20,7 @@ def analyse():
     label = sentiment[0]['label']
     score = sentiment[0]['score']
     
-    return render_template("result.html", score = round(score * 100, 2), label = label)
+    return render_template("result.html", score = round(score * 100, 2), label = label, text = text)
 
         
 
