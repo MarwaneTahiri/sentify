@@ -28,3 +28,9 @@
 
 ## Day 6 - 10/06/26
 - Added original text display on result page
+
+## Day 7 - 11/06/26
+- Added Flask-SQLAlchemy and SQLite database
+- Created Analysis model with text, label, score, created_at fields
+- Every analysis now saved to database on submission
+- Verified data saving correctly via /history route
