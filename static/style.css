@@ -48,4 +48,10 @@ body {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    margin-top: 25px;
+}
+
+.analysis {
+    padding-bottom: 25px;
+    border-bottom: 4px dotted #d97757;
 }

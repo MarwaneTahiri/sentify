@@ -34,3 +34,11 @@
 - Created Analysis model with text, label, score, created_at fields
 - Every analysis now saved to database on submission
 - Verified data saving correctly via /history route
+
+## Day 8 - 22/06/26
+- Built history page showing all past analyses with label, 
+  score, text and timestamp
+- Fixed duplicate entry bug using Post/Redirect/Get pattern
+- Result page now fetches from database using analysis id
+- Refreshing result page no longer creates duplicate entries
+- Added .gitignore to exclude database and cache files

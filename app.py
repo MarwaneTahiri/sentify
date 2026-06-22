@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from transformers import pipeline
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -40,6 +40,7 @@ def analyse():
     text = request.form.get('text')
     if text.strip() == "":
         return redirect('/')
+    
 
     sentiment = analyzer(text)
     
@@ -49,13 +50,19 @@ def analyse():
     analysis = Analysis(text = text, label = label, score = score)
     db.session.add(analysis)
     db.session.commit()
+
     
-    return render_template("result.html", score = round(score * 100, 2), label = label, text = text)
+    return redirect(url_for('result', id=analysis.id))
+
+@app.route('/result/<int:id>')
+def result(id):
+    analysis = db.session.get(Analysis, id)
+    return render_template("result.html", analysis = analysis)
 
 @app.route('/history')
 def history():
     analyses = Analysis.query.all()
-    return str([(a.text, a.label, a.score) for a in analyses])        
+    return render_template("history.html", analyses = analyses)        
 
 if __name__ == '__main__':
     app.run(debug=True)
